@@ -8,7 +8,10 @@ Para UTF-8, o tamanho máximo pode ser significativamente menor, pois caracteres
 # Recomendação Prática
 Para uma chave de 1024 bits, um tamanho seguro para a mensagem seria cerca de 100 caracteres ASCII ou menos para garantir que a conversão em número não exceda o tamanho do módulo n.
 Se a mensagem contiver caracteres acentuados ou especiais, o número seguro de caracteres deve ser reduzido ainda mais.
-
+Indicação(Apenas dica): Para não ter confusão entre arquivos utilize;
+teste.txt como arquivo original
+c.txt arquivo cifrado
+d.txt arquivo decifrado
 1. **Cifrar um Arquivo**:
    - Escolha a opção `1`.
    - Forneça o caminho do arquivo que você deseja cifrar (por exemplo, `"caminho/para/seu/arquivo.txt"`).
