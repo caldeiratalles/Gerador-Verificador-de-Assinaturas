@@ -7,15 +7,18 @@ from parte3.chiper import read_file_as_bytes
 # Função para calcular o hash SHA-3 de uma mensagem
 def calculate_sha3_hash(message):
     sha3_hash = hashlib.sha3_256()
-    sha3_hash.update(message.encode('utf-8'))
+    # Verifica se a mensagem é uma string e codifica para bytes se necessário
+    if isinstance(message, str):
+        message = message.encode('utf-8')
+    sha3_hash.update(message)
     return sha3_hash.digest()
 
 
 # Função para assinar uma mensagem
 def sign_message(private_key, message):
-    hash = calculate_sha3_hash(message)
+    _hash = calculate_sha3_hash(message)
     d, n = private_key
-    signature = pow(int.from_bytes(hash, byteorder='big'), d, n)
+    signature = pow(int.from_bytes(_hash, byteorder='big'), d, n)
     return base64.b64encode(signature.to_bytes((signature.bit_length() + 7) // 8, byteorder='big')).decode()
 
 
