@@ -5,6 +5,7 @@ from parte3.chiper import rsa_encrypt_file, rsa_decrypt_file, read_file_as_bytes
 
 
 def main():
+    global signature
     print("Sistema de Criptografia RSA")
 
     # Geração das chaves RSA
@@ -42,7 +43,6 @@ def main():
 
         elif escolha == '4':
             input_file_path = input("Caminho do arquivo original: ")
-            signature = input("Assinatura para verificação(Copie a que foi gerada na etapa 3): ")
             is_signature_valid = verify_file_signature(public_key, input_file_path, signature)
             print("Verificação da Assinatura:", is_signature_valid)
 

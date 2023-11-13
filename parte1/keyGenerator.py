@@ -8,7 +8,7 @@ def is_prime(n, k=128):
     if n <= 1 or n % 2 == 0:
         return False
 
-    # Escreva o número n-1 como 2^r * d
+    # Escreva o número n-1 como 2 elevado a r * d
     # com d sendo ímpar, isso é feito subtraindo 1 de n e dividindo por 2 repetidamente.
     r, d = 0, n - 1
     while d % 2 == 0:
@@ -57,9 +57,9 @@ def xgcd(a, b):
 
 # Função para encontrar o inverso multiplicativo
 def modinv(a, m):
-    g, x, y = xgcd(a, m)
+    g, x, _ = xgcd(a, m)
     if g != 1:
-        raise Exception('Inverso multiplicativo não existe')
+        raise Exception("Inverso multiplicativo não existe")
     return x % m
 
 
