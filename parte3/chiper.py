@@ -37,7 +37,9 @@ def rsa_encrypt_with_oaep(public_key, message):
     padded_message = oaep_pad(message, len(bin(n)) - 2)
     message_as_int = int.from_bytes(padded_message, byteorder='big')
     ciphertext = pow(message_as_int, e, n)
-    return ciphertext.to_bytes((ciphertext.bit_length() + 7) // 8, byteorder='big')
+    return ciphertext.to_bytes(
+        (ciphertext.bit_length() + 7) // 8, byteorder='big'
+    )
 
 
 # Função para decifrar com OAEP
@@ -45,7 +47,9 @@ def rsa_decrypt_with_oaep(private_key, ciphertext):
     d, n = private_key
     ciphertext_as_int = int.from_bytes(ciphertext, byteorder='big')
     decrypted_int = pow(ciphertext_as_int, d, n)
-    decrypted_message = decrypted_int.to_bytes((decrypted_int.bit_length() + 7) // 8, byteorder='big')
+    decrypted_message = decrypted_int.to_bytes(
+        (decrypted_int.bit_length() + 7) // 8, byteorder='big'
+    )
     unpadded_message = oaep_unpad(decrypted_message, len(bin(n)) - 2)
     return unpadded_message
 

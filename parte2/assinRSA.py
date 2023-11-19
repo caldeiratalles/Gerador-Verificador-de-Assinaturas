@@ -19,7 +19,9 @@ def sign_message(private_key, message):
     _hash = calculate_sha3_hash(message)
     d, n = private_key
     signature = pow(int.from_bytes(_hash, byteorder='big'), d, n)
-    return base64.b64encode(signature.to_bytes((signature.bit_length() + 7) // 8, byteorder='big')).decode()
+    return base64.b64encode(signature.to_bytes(
+        (signature.bit_length() + 7) // 8, byteorder='big')
+    ).decode()
 
 
 def verify_file_signature(public_key, input_file_path, signature):
@@ -33,4 +35,6 @@ def verify_signature(public_key, message, signature):
     signature = int.from_bytes(base64.b64decode(signature), byteorder='big')
     decrypted_hash = pow(signature, e, n)
     original_hash = calculate_sha3_hash(message)
-    return original_hash == decrypted_hash.to_bytes((decrypted_hash.bit_length() + 7) // 8, byteorder='big')
+    return original_hash == decrypted_hash.to_bytes(
+        (decrypted_hash.bit_length() + 7) // 8, byteorder='big'
+    )
