@@ -33,7 +33,7 @@ def is_prime(n, k=128):
 
 
 # Função para gerar um número primo grande
-def generate_large_prime(keysize=1024):
+def generate_large_prime(keysize=2048):
     while True:
         prime_candidate = random.getrandbits(keysize)
         if is_prime(prime_candidate):
