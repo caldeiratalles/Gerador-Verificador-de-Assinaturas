@@ -6,10 +6,15 @@ Para usar a interface interativa que discutimos, siga esta sequência de inputs:
 
 # Cálculo Aproximado do Tamanho Máximo da Mensagem
 Para texto ASCII (onde cada caractere é representado por 1 byte), o tamanho máximo ideal seria um pouco menos de 189 caracteres para uma chave de 2048 bits.
+
 Tamanho Máximo da Mensagem = (Tamanho da chave RSA/8) - 2 x Tamanho do Hash - 2
+
 Valor Máximo ideal(Valor máximo real 189): 180 caracteres com a proporção de caracteres especiais
+
 Mensagem com o Máximo de caractere especial possível -> Mensagem especial: ão, é, ê, í, ó! Celebrando a vida, a arte e a alegria com paixão, cor e vibração. A cada passo, um novo êxtase.
+
 Mensagem com espaço,virgula e ponto -> Esta jornada da vida nos leva por caminhos repletos de aprendizado, desafios e oportunidades. Cada experiencia nos molda e fortalece, abrindo caminhos para novos horizontes e descobertas r
+
 
 Indicação(Apenas dica): Para não ter confusão entre arquivos utilize;
 teste.txt como arquivo original
