@@ -64,11 +64,16 @@ Suponha que você queira cifrar, decifrar, assinar e verificar a assinatura de u
    - Opção: `5`
 ### Comentários
 Foi executado alguns testes(aleatórios) para tentar compreender quais seriam mais ou menos o valor aproximado de caracteres que devemos tirar para conseguir codificar/decodificar as mensagens sem problemas mesmo com acentos
+
 Mensagem utilizada:
 Fé e esperança são as lanternas eternas que iluminam o caminho de minha alma, guiando-me através das sombras da incerteza e da dúvida. Em cada passo dessa jornada, percebo que a fé não
+
 Valor: 189
+
 Valor calculado por causa dos caracteres: 191
+
 Equivalência para calculo aproximado: 1 carateres especial -> Perdemos mais ou menos 2 caracteres de mensagem, para testes sem erro considere 1 para 3.
+
 Foi analisado que para cada caractere "á é í ó ú â ê ô ã õ ç" o peso é 2
 
 Valor Máximo ideal(Máximo real é 189): 180 caracteres com a proporção de caracteres especiais
