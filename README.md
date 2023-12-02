@@ -16,7 +16,7 @@ Mensagem com o Máximo de caractere especial possível -> Mensagem especial: ão
 Mensagem com espaço,virgula e ponto -> Esta jornada da vida nos leva por caminhos repletos de aprendizado, desafios e oportunidades. Cada experiencia nos molda e fortalece, abrindo caminhos para novos horizontes e descobertas r
 
 
-Indicação(Apenas dica): Para não ter confusão entre arquivos utilize;
+### Indicação(Apenas dica): Para não ter confusão entre arquivos utilize;
 
 teste.txt como arquivo original
 
