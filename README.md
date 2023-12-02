@@ -17,9 +17,13 @@ Mensagem com espaço,virgula e ponto -> Esta jornada da vida nos leva por caminh
 
 
 Indicação(Apenas dica): Para não ter confusão entre arquivos utilize;
+
 teste.txt como arquivo original
+
 c.txt arquivo cifrado
+
 d.txt arquivo decifrado
+
 1. **Cifrar um Arquivo**:
    - Escolha a opção `1`.
    - Forneça o caminho do arquivo que você deseja cifrar (por exemplo, `"caminho/para/seu/arquivo.txt"`).
