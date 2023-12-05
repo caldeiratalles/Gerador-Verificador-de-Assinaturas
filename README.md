@@ -1,19 +1,29 @@
 
 # Gerador-Verificador-de-Assinaturas
 Talles Marcelo 20/0060295
+OBS: Olhar os comentários ao final do README
 Para usar a interface interativa que discutimos, siga esta sequência de inputs:
 
 # Cálculo Aproximado do Tamanho Máximo da Mensagem
-Para texto ASCII (onde cada caractere é representado por 1 byte), o tamanho máximo seria um pouco menos de 62 caracteres para uma chave de 1024 bits.
+Para texto ASCII (onde cada caractere é representado por 1 byte), o tamanho máximo ideal seria um pouco menos de 189 caracteres para uma chave de 2048 bits.
+
 Tamanho Máximo da Mensagem = (Tamanho da chave RSA/8) - 2 x Tamanho do Hash - 2
-Por exemplo, para uma chave RSA de 1024 bits (128 bytes) e usando SHA-256 para o OAEP (que tem um tamanho de hash de 32 bytes), o tamanho máximo da mensagem seria:
-128−2×32−2=62 bytes
+
+Valor Máximo ideal(Valor máximo real 189): 180 caracteres com a proporção de caracteres especiais
+
+Mensagem com o Máximo de caractere especial possível -> Mensagem especial: ão, é, ê, í, ó! Celebrando a vida, a arte e a alegria com paixão, cor e vibração. A cada passo, um novo êxtase.
+
+Mensagem com espaço,virgula e ponto -> Esta jornada da vida nos leva por caminhos repletos de aprendizado, desafios e oportunidades. Cada experiencia nos molda e fortalece, abrindo caminhos para novos horizontes e descobertas r
 
 
-Indicação(Apenas dica): Para não ter confusão entre arquivos utilize;
+### Indicação(Apenas dica): Para não ter confusão entre arquivos utilize;
+
 teste.txt como arquivo original
+
 c.txt arquivo cifrado
+
 d.txt arquivo decifrado
+
 1. **Cifrar um Arquivo**:
    - Escolha a opção `1`.
    - Forneça o caminho do arquivo que você deseja cifrar (por exemplo, `"caminho/para/seu/arquivo.txt"`).
@@ -61,3 +71,18 @@ Suponha que você queira cifrar, decifrar, assinar e verificar a assinatura de u
 
 5. **Sair**:
    - Opção: `5`
+### Comentários
+Foi executado alguns testes(aleatórios) para tentar compreender quais seriam mais ou menos o valor aproximado de caracteres que devemos tirar para conseguir codificar/decodificar as mensagens sem problemas mesmo com acentos
+
+Mensagem utilizada:
+Fé e esperança são as lanternas eternas que iluminam o caminho de minha alma, guiando-me através das sombras da incerteza e da dúvida. Em cada passo dessa jornada, percebo que a fé não
+
+Valor: 189
+
+Valor calculado por causa dos caracteres: 191
+
+Equivalência para calculo aproximado: 1 carateres especial -> Perdemos mais ou menos 2 caracteres de mensagem, para testes sem erro considere 1 para 3.
+
+Foi analisado que para cada caractere "á é í ó ú â ê ô ã õ ç" o peso é 2
+
+Valor Máximo ideal(Máximo real é 189): 180 caracteres com a proporção de caracteres especiais
