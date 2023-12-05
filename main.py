@@ -12,7 +12,7 @@ def main():
     public_key, private_key = generate_rsa_keys(1024)
     print("Chaves RSA geradas com sucesso.")
     print("Para o caminho da assinatura use 3 -> 4 -> 5 com qualquer tamanho")
-    print("Para o caminho da mensagem use 1 -> 2 -> 3 -> 4 tamanho de até 180")
+    print("Para o caminho da mensagem use 1 -> 2 -> 4 -> 5 tamanho de até 180")
     while True:
         print("\nOpções:")
         print("1. Cifrar um arquivo")
