@@ -1,4 +1,4 @@
-from OAEP.oaep import oaep_pad, oaep_unpad
+from OAEP.oaep import oaep_pad, oaep_unpad, oaep_pad_assinatura
 
 
 def read_file_as_bytes(file_path):
@@ -17,6 +17,12 @@ def rsa_encrypt_file(public_key, input_file_path, output_file_path):
     write_bytes_to_file(output_file_path, encrypted_message)
 
 
+def rsa_encrypt_file_assinatura(public_key, input_file_path, output_file_path):
+    message = read_file_as_bytes(input_file_path)
+    encrypted_message = rsa_encrypt_with_oaep_assinatura(public_key, message)
+    write_bytes_to_file(output_file_path, encrypted_message)
+
+
 def rsa_decrypt_file(private_key, input_file_path, output_file_path):
     ciphertext = read_file_as_bytes(input_file_path)
     decrypted_message = rsa_decrypt_with_oaep(private_key, ciphertext)
@@ -32,12 +38,22 @@ def rsa_decrypt_file(private_key, input_file_path, output_file_path):
 
 
 # Função para cifrar com OAEP
-#Big-endian (byteorder='big'):
+# Big-endian (byteorder='big'):
 # Os bytes mais significativos são armazenados em endereços de memória menores.
 # Relatorio está melhor descrito
 def rsa_encrypt_with_oaep(public_key, message):
     e, n = public_key
     padded_message = oaep_pad(message, len(bin(n)) - 2)
+    message_as_int = int.from_bytes(padded_message, byteorder='big')
+    ciphertext = pow(message_as_int, e, n)
+    return ciphertext.to_bytes(
+        (ciphertext.bit_length() + 7) // 8, byteorder='big'
+    )
+
+
+def rsa_encrypt_with_oaep_assinatura(public_key, message):
+    e, n = public_key
+    padded_message = oaep_pad_assinatura(message, len(bin(n)) - 2)
     message_as_int = int.from_bytes(padded_message, byteorder='big')
     ciphertext = pow(message_as_int, e, n)
     return ciphertext.to_bytes(
