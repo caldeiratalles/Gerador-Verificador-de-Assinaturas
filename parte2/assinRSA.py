@@ -15,6 +15,7 @@ def calculate_sha3_hash(message):
 
 
 # Função para assinar uma mensagem
+# Relatorio está melhor descrito sobre o byteorder
 def sign_message(private_key, message):
     _hash = calculate_sha3_hash(message)
     d, n = private_key
@@ -30,6 +31,7 @@ def verify_file_signature(public_key, input_file_path, signature):
 
 
 # Função para verificar uma assinatura
+# Relatorio está melhor descrito sobre o byteorder
 def verify_signature(public_key, message, signature):
     e, n = public_key
     signature = int.from_bytes(base64.b64decode(signature), byteorder='big')

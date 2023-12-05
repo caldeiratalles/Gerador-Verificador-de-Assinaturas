@@ -34,7 +34,7 @@ def rsa_decrypt_file(private_key, input_file_path, output_file_path):
 # Função para cifrar com OAEP
 #Big-endian (byteorder='big'):
 # Os bytes mais significativos são armazenados em endereços de memória menores.
-# Por exemplo, o número 0x1234 seria armazenado como 12 34 em big-endian.
+# Relatorio está melhor descrito
 def rsa_encrypt_with_oaep(public_key, message):
     e, n = public_key
     padded_message = oaep_pad(message, len(bin(n)) - 2)
@@ -46,6 +46,7 @@ def rsa_encrypt_with_oaep(public_key, message):
 
 
 # Função para decifrar com OAEP
+# Relatorio está melhor descrito sobre o byteorder
 def rsa_decrypt_with_oaep(private_key, ciphertext):
     d, n = private_key
     ciphertext_as_int = int.from_bytes(ciphertext, byteorder='big')
