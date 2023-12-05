@@ -3,6 +3,8 @@
 Talles Marcelo 20/0060295
 OBS: Olhar os comentários ao final do README
 Para usar a interface interativa que discutimos, siga esta sequência de inputs:
+# Para a assinatura
+Para a analise da assinatura podemos usar qualquer tamanho de mensagem.
 
 # Cálculo Aproximado do Tamanho Máximo da Mensagem
 Para texto ASCII (onde cada caractere é representado por 1 byte), o tamanho máximo ideal seria um pouco menos de 189 caracteres para uma chave de 1048 bits.
