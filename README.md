@@ -16,9 +16,12 @@ Para texto ASCII (onde cada caractere é representado por 1 byte), o tamanho má
 - Mensagem com o Máximo de caractere especial possível: "ão, é, ê, í, ó! Celebrando a vida, a arte e a alegria com paixão, cor e vibração. A cada passo, um novo êxtase."
 - Mensagem com espaço, vírgula e ponto: "Esta jornada da vida nos leva por caminhos repletos de aprendizado, desafios e oportunidades. Cada experiência nos molda e fortalece, abrindo caminhos para novos horizontes e descobertas r"
 
+
 ## Sequência de Uso para Assinatura de Arquivos
 Para cifrar, assinar e verificar a assinatura de um arquivo, siga estes passos:
-
+### Use o arquivo teste.txt para sua texto principal
+### Use o arquivo c.txt para salvar o arquivo cifrado
+### Use o arquivo d.txt para salvar o arquivo decifrado
 ### Cifrar o Arquivo (Opção 3):
 - **Caminho do Arquivo a ser Cifrado**: Especifique o caminho do arquivo que deseja cifrar.
 - **Caminho para Salvar o Arquivo Cifrado**: Forneça o caminho onde o arquivo cifrado será salvo.
