@@ -5,7 +5,7 @@ OBS: Olhar os comentários ao final do README
 Para usar a interface interativa que discutimos, siga esta sequência de inputs:
 
 # Cálculo Aproximado do Tamanho Máximo da Mensagem
-Para texto ASCII (onde cada caractere é representado por 1 byte), o tamanho máximo ideal seria um pouco menos de 189 caracteres para uma chave de 2048 bits.
+Para texto ASCII (onde cada caractere é representado por 1 byte), o tamanho máximo ideal seria um pouco menos de 189 caracteres para uma chave de 1048 bits.
 
 Tamanho Máximo da Mensagem = (Tamanho da chave RSA/8) - 2 x Tamanho do Hash - 2
 
